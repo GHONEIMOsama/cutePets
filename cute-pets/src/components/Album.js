@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBarComponent from './SearchBar';
 import CardComponent from './Card';
+import { pets } from '../services/petsApi.js';
 
 class AlbumComponent extends Component {
     
@@ -13,9 +14,11 @@ class AlbumComponent extends Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col'>
-                        <CardComponent />
-                    </div>
+                    {pets.map(pet => (
+                        <div className='col'>
+                            <CardComponent pet={pet}/>
+                        </div>
+                    ))}         
                 </div>
             </div> 
         );
