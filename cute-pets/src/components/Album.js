@@ -1,10 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import SearchBarComponent from './SearchBar';
 import CardComponent from './Card';
 import { pets } from '../services/petsApi.js';
+import { fetchAllData } from '../services/petsApi.js';
 
 class AlbumComponent extends Component {
     
+    constructor(props) {
+        super(props);
+        this.state = {
+            dogsData: []
+        };
+    }
+
+    componentDidMount() {
+        fetchAllData().then(resJson => {
+            this.setState({dogsData: resJson});
+        }).catch(err => {
+            console.error('Fetch all data error : ', err);
+        });
+    }
+
     render() {
         return (
             <div>
