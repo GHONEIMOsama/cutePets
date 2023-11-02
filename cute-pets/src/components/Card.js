@@ -8,13 +8,13 @@ class CardComponent extends Component {
             <div className='border rounded shadow'>
                 <div className='row'>
                     <div className='col-12'>
-                        <img src='../assets/cuteCat.jpg' alt={this.props.pet.alt} />
+                        <img src='../assets/cuteCat.jpg' alt='Dog photo' />
                     </div>
                     <div className='col-12'>
-                        <h4>{this.props.pet.title}</h4>
+                        <h4>{this.props.dogData.name}</h4>
                     </div>
                     <div className='col-12'>
-                        {this.props.pet.description}
+                        {this.props.dogData.description}
                     </div>
                 </div>
             </div>

@@ -7,6 +7,10 @@ export function fetchAllData() {
     });
 }
 
+export function fetchImageData(id) {
+    return fetch('https://api.thedogapi.com/v1/images/search?include_breed=1&breed_id=' + id);
+}
+
 export const pets = [
     {title: 'Cat', imgUrl: '../assets/cuteCat.jpg', alt: 'cat img', description: 'Cat Description => fsdkjlfhsd flhsdlkfhdghqf fgqdfhqskdjfh slqdfh sdiulfhslk dfhleuzfhklj sdfhldkqjd fhlskdfhsdlf klqsdfh kjldsqsdhflkjsdsdh lkj'},
     {title: 'Dog', imgUrl: '../assets/cuteDog.jpg', alt: 'dog img', description: 'Dog Description => fsdkjlfhsd flhsdlkfhdghqf fgqdfhqskdjfh slqdfh sdiulfhslk dfhleuzfhklj sdfhldkqjd fhlskdfhsdlf klqsdfh kjldsqsdhflkjsdsdh lkj'},
