@@ -8,7 +8,7 @@ class CardComponent extends Component {
             <div className='border rounded shadow'>
                 <div className='row'>
                     <div className='col-12'>
-                        <img src='../assets/cuteCat.jpg' alt='Dog photo' />
+                        <img src={this.props.dogData.imgUrl} alt='Dog photo' width='300' height='300' />
                     </div>
                     <div className='col-12'>
                         <h4>{this.props.dogData.name}</h4>
