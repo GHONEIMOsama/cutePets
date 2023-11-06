@@ -52,12 +52,12 @@ class AlbumComponent extends Component {
     render() {
         return (
             <div>
-                <div className='row'>
+                <div className='row mb-3 p-2'>
                     <div className='col'>
                         <SearchBarComponent searchValueHander={this.searchValueHandler}/>
                     </div>
                 </div>
-                <div className='row'>
+                <div className='row p-3'>
                     {this.state.dogsData.filter(dogData => this.state.searchValue === '' || dogData.name.startsWith(this.state.searchValue)).map(dogData => (
                         <div className='col-3 mb-3'>
                             <CardComponent dogData={dogData}/>

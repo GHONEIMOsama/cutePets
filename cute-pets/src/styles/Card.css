@@ -1,0 +1,11 @@
+.expand-on-hover {
+    transition: transform 0.3s;
+}
+
+.expand-on-hover:hover {
+    transform: scale(1.05);
+}
+
+.pleft-5 {
+    padding-left: 5% !important;
+}
