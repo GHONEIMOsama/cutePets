@@ -8,7 +8,8 @@ class AlbumComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dogsData: []
+            dogsData: [],
+            searchValue: ''
         };
     }
 
@@ -31,7 +32,6 @@ class AlbumComponent extends Component {
                 console.log(this.state.dogsData);
             }) */
 
-
             this.setState({dogsData: allDataResJson.map(res => {
                 return {
                     id: res.id,
@@ -45,16 +45,20 @@ class AlbumComponent extends Component {
         });
     }
 
+    searchValueHandler = (searchValue) => {
+        this.setState({searchValue: searchValue});
+    }
+
     render() {
         return (
             <div>
                 <div className='row'>
                     <div className='col'>
-                        <SearchBarComponent />
+                        <SearchBarComponent searchValueHander={this.searchValueHandler}/>
                     </div>
                 </div>
                 <div className='row'>
-                    {this.state.dogsData.map(dogData => (
+                    {this.state.dogsData.filter(dogData => this.state.searchValue === '' || dogData.name.startsWith(this.state.searchValue)).map(dogData => (
                         <div className='col-3 mb-3'>
                             <CardComponent dogData={dogData}/>
                         </div>
